@@ -78,7 +78,7 @@ const Timer = ({ initialSeconds }) => {
       <button onClick={setTime}>Set Time</button>
       <button onClick={toggle}>{isActive ? 'Pause' : 'Start'}</button>
       <button onClick={reset}>Reset</button>
-      <Queue queue={queue} />
+      <Queue queue={queue} setQueue={setQueue} />
       <ToastContainer />
     </div>
   );

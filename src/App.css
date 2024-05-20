@@ -85,4 +85,9 @@ svg {
   padding: 10px;
   border-radius: 5px;
   color: #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.queue li:hover {
+  background-color: #333;
 }
