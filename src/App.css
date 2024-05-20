@@ -91,3 +91,21 @@ svg {
 .queue li:hover {
   background-color: #333;
 }
+
+.draggable-item {
+  background-color: #1e1e1e;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.draggable-item:hover {
+  background-color: #333;
+}
+
+.droppable-list {
+  list-style-type: none;
+  padding: 0;
+}

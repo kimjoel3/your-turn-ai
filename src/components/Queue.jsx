@@ -19,7 +19,11 @@ const Queue = ({ queue, setQueue }) => {
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="queue">
           {(provided) => (
-            <ul {...provided.droppableProps} ref={provided.innerRef}>
+            <ul
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+              className="droppable-list"
+            >
               {queue.map((person, index) => (
                 <Draggable key={person} draggableId={person} index={index}>
                   {(provided) => (
@@ -27,6 +31,7 @@ const Queue = ({ queue, setQueue }) => {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
+                      className="draggable-item"
                     >
                       {person}
                     </li>
