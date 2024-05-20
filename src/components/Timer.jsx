@@ -3,12 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PieChart from './PieChart';
+import Queue from './Queue';
 import soundFile from './ping2.mp3'; // Ensure you have this file in the appropriate path
+import names from '../names.json';
 
 const Timer = ({ initialSeconds }) => {
   const [seconds, setSeconds] = useState(initialSeconds);
   const [inputSeconds, setInputSeconds] = useState(initialSeconds);
   const [isActive, setIsActive] = useState(false);
+  const [queue, setQueue] = useState(names);
   const audio = new Audio(soundFile);
 
   useEffect(() => {
@@ -39,6 +42,7 @@ const Timer = ({ initialSeconds }) => {
   const reset = () => {
     setSeconds(Number(inputSeconds));
     setIsActive(false);
+    swapQueue();
   };
 
   const handleChange = (e) => {
@@ -48,6 +52,15 @@ const Timer = ({ initialSeconds }) => {
   const setTime = () => {
     setSeconds(Number(inputSeconds));
     setIsActive(false);
+  };
+
+  const swapQueue = () => {
+    if (queue.length > 1) {
+      const newQueue = [...queue];
+      const firstPerson = newQueue.shift();
+      newQueue.push(firstPerson);
+      setQueue(newQueue);
+    }
   };
 
   const percentage = (seconds / inputSeconds) * 100;
@@ -65,6 +78,7 @@ const Timer = ({ initialSeconds }) => {
       <button onClick={setTime}>Set Time</button>
       <button onClick={toggle}>{isActive ? 'Pause' : 'Start'}</button>
       <button onClick={reset}>Reset</button>
+      <Queue queue={queue} />
       <ToastContainer />
     </div>
   );

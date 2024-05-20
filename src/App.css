@@ -64,3 +64,25 @@ svg {
 .Toastify__progress-bar {
   background: #6200ea;
 }
+
+.queue {
+  margin-top: 20px;
+}
+
+.queue h2 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.queue ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.queue li {
+  background-color: #1e1e1e;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #e0e0e0;
+}
