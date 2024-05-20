@@ -1,3 +1,7 @@
+I've created a timer.  It counts down, and lets the user input the time it counts down from.  THere is a start, reset, and set time button.  There is a visual pie chart to show the timer progress. On the click of reset, the queue of people loaded from a json switches to the next person.  The styling was set to being a dark, modern, simplistic theme.
+
+
+
 Does the code work? If not, what's broken.
 
 Yes, the code runs well.
